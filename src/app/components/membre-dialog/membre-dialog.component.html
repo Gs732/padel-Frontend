@@ -1,0 +1,43 @@
+<h2 mat-dialog-title>Nouveau Membre</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="form" class="flex flex-col gap-4 pt-2">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Nom</mat-label>
+      <input matInput formControlName="nom" placeholder="Dupont">
+      <mat-error *ngIf="form.get('nom')?.invalid">Nom obligatoire</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Prénom</mat-label>
+      <input matInput formControlName="prenom" placeholder="Jean">
+      <mat-error *ngIf="form.get('prenom')?.invalid">Prénom obligatoire</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" placeholder="jean@example.com">
+      <mat-error *ngIf="form.get('email')?.invalid">Email invalide</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Téléphone</mat-label>
+      <input matInput formControlName="telephone" placeholder="0477123456">
+      <mat-error *ngIf="form.get('telephone')?.invalid">Téléphone obligatoire</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Solde (€)</mat-label>
+      <input matInput type="number" formControlName="solde">
+    </mat-form-field>
+
+    <mat-slide-toggle formControlName="actif">Membre actif</mat-slide-toggle>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="annuler()">Annuler</button>
+  <button mat-raised-button color="primary" (click)="confirmer()">Créer</button>
+</mat-dialog-actions>
