@@ -1,9 +1,9 @@
 <div class="p-4">
 <div class="flex justify-between items-center mb-4">
     <h1 class="text-2xl font-bold">Gestion des Membres</h1>
-    <button mat-raised-button color="primary">
-    + Nouveau membre
-    </button>
+    <button mat-raised-button color="primary" (click)="ouvrirDialog()">
+  + Nouveau membre
+</button>
 </div>
 
 <table mat-table [dataSource]="membres" class="w-full shadow">
