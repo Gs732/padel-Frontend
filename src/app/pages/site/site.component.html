@@ -1,0 +1,58 @@
+<div class="p-4">
+  <div class="flex justify-between items-center mb-4">
+    <h1 class="text-2xl font-bold">Gestion des Sites</h1>
+    <button mat-raised-button color="primary" (click)="ouvrirDialog()">
+      + Nouveau site
+    </button>
+  </div>
+
+  <table mat-table [dataSource]="sites" class="w-full shadow">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let s">{{ s.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="nom">
+      <th mat-header-cell *matHeaderCellDef>Nom</th>
+      <td mat-cell *matCellDef="let s">{{ s.nom }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="adresse">
+      <th mat-header-cell *matHeaderCellDef>Adresse</th>
+      <td mat-cell *matCellDef="let s">{{ s.adresse }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="ville">
+      <th mat-header-cell *matHeaderCellDef>Ville</th>
+      <td mat-cell *matCellDef="let s">{{ s.ville }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="telephone">
+      <th mat-header-cell *matHeaderCellDef>Téléphone</th>
+      <td mat-cell *matCellDef="let s">{{ s.telephone }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actif">
+      <th mat-header-cell *matHeaderCellDef>Actif</th>
+      <td mat-cell *matCellDef="let s">
+        <span [class]="s.actif ? 'text-green-600' : 'text-red-600'">
+          {{ s.actif ? 'Oui' : 'Non' }}
+        </span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let s">
+        <button mat-icon-button color="warn" (click)="supprimerSite(s.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+</div>

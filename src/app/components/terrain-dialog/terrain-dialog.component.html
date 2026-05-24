@@ -1,0 +1,33 @@
+<h2 mat-dialog-title>Nouveau Terrain</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="form" class="flex flex-col gap-4 pt-2">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Nom</mat-label>
+      <input matInput formControlName="nom" placeholder="Terrain 1">
+      <mat-error *ngIf="form.get('nom')?.invalid">Nom obligatoire</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Type</mat-label>
+      <input matInput formControlName="type" placeholder="Padel, Tennis...">
+      <mat-error *ngIf="form.get('type')?.invalid">Type obligatoire</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Site ID</mat-label>
+      <input matInput type="number" formControlName="siteId">
+      <mat-error *ngIf="form.get('siteId')?.invalid">Site obligatoire</mat-error>
+    </mat-form-field>
+
+    <mat-slide-toggle formControlName="interieur">Terrain intérieur</mat-slide-toggle>
+    <mat-slide-toggle formControlName="actif">Terrain actif</mat-slide-toggle>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="annuler()">Annuler</button>
+  <button mat-raised-button color="primary" (click)="confirmer()">Créer</button>
+</mat-dialog-actions>

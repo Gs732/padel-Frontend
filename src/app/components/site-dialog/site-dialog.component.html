@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>Nouveau Site</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="form" class="flex flex-col gap-4 pt-2">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Nom</mat-label>
+      <input matInput formControlName="nom" placeholder="Padel Club Bruxelles">
+      <mat-error *ngIf="form.get('nom')?.invalid">Nom obligatoire</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Adresse</mat-label>
+      <input matInput formControlName="adresse" placeholder="Rue de la Loi 1">
+      <mat-error *ngIf="form.get('adresse')?.invalid">Adresse obligatoire</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Ville</mat-label>
+      <input matInput formControlName="ville" placeholder="Bruxelles">
+      <mat-error *ngIf="form.get('ville')?.invalid">Ville obligatoire</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Téléphone</mat-label>
+      <input matInput formControlName="telephone" placeholder="02 123 45 67">
+      <mat-error *ngIf="form.get('telephone')?.invalid">Téléphone obligatoire</mat-error>
+    </mat-form-field>
+
+    <mat-slide-toggle formControlName="actif">Site actif</mat-slide-toggle>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+<button mat-button (click)="annuler()">Annuler</button>
+<button mat-raised-button color="primary" (click)="confirmer()">Créer</button>
+</mat-dialog-actions>
