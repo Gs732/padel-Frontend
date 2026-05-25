@@ -3,16 +3,17 @@ import { CommonModule } from '@angular/common';
 import {
   ReactiveFormsModule,
   FormBuilder,
-  FromGroup,
+  FormGroup,
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from '../../services/auth.service';
+import { inject } from '@angular/core';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
@@ -21,18 +22,18 @@ export class LoginComponent {
   errorMessage: string = '';
   isLoading: boolean = false;
 
-  constructor(
-    private fb: FormBuilder,
-    private authService: AuthService,
-    private router: Router,
-  ) {
+  private authService = inject(AuthService);
+  private router = inject(Router);
+  private fb = inject(FormBuilder);
+
+  constructor() {
     this.loginForm = this.fb.group({
-      username: [' ', Validators.required],
-      password: [' ', Validators.required],
+      username: ['', Validators.required],
+      password: ['', Validators.required],
     });
   }
 
-  OnSumbit(): void {
+  onSubmit(): void {
     if (this.loginForm.valid) {
       this.isLoading = true;
       this.errorMessage = '';
@@ -42,7 +43,6 @@ export class LoginComponent {
           this.isLoading = false;
           this.router.navigate(['/membres']);
         },
-
         error: () => {
           this.isLoading = false;
           this.errorMessage = 'Identifiants incorrects !';
