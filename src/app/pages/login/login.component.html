@@ -1,1 +1,44 @@
-<p>login works!</p>
+<div class="container">
+  <!-- Formulaire Login -->
+  <div class="form-box login">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <h1>Login</h1>
+
+      <div class="input-box">
+        <input
+          type="text"
+          placeholder="Username"
+          formControlName="username"
+          required
+        />
+        <i class="bx bxs-user"></i>
+      </div>
+
+      <div class="input-box">
+        <input
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+          required
+        />
+        <i class="bx bxs-lock-alt"></i>
+      </div>
+
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+
+      <button type="submit" class="btn" [disabled]="isLoading">
+        {{ isLoading ? "Connexion..." : "Login" }}
+      </button>
+    </form>
+  </div>
+
+  <!-- Panel de droite -->
+  <div class="toggle-box">
+    <div class="toggle-panel toggle-left">
+      <h1>🎾 Padel Manager</h1>
+      <p>Connectez-vous pour gérer vos terrains et réservations</p>
+    </div>
+  </div>
+</div>
