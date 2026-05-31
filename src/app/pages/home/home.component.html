@@ -1,1 +1,90 @@
-<p>home works!</p>
+<div class="min-h-screen bg-gray-50 py-16 px-4">
+  <!-- En-tête -->
+  <div class="text-center mb-14">
+    <h1 class="text-4xl font-bold text-gray-800 mb-4">
+      Bienvenue sur Padel Manager 🎾
+    </h1>
+    <p class="text-gray-500 text-lg max-w-xl mx-auto">
+      Gérez vos clubs, terrains, membres et réservations depuis une seule
+      interface simple et efficace.
+    </p>
+    <div class="mt-5 w-16 h-1 bg-pink-600 rounded-full mx-auto"></div>
+  </div>
+
+  <!-- Cartes -->
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto"
+  >
+    <!-- Membres -->
+    <a
+      routerLink="/membres"
+      class="group bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col items-center text-center hover:shadow-md hover:-translate-y-1 transition-all duration-200"
+    >
+      <div
+        class="w-14 h-14 rounded-full bg-pink-50 flex items-center justify-center mb-4 group-hover:bg-pink-100 transition-colors"
+      >
+        <span class="material-icons text-pink-600 text-2xl">people</span>
+      </div>
+      <h2 class="text-lg font-semibold text-gray-800 mb-1">Membres</h2>
+      <p class="text-sm text-gray-400">Gérez les adhérents de votre club</p>
+      <span class="mt-4 text-xs font-medium text-pink-600 group-hover:underline"
+        >Accéder →</span
+      >
+    </a>
+
+    <!-- Sites -->
+    <a
+      routerLink="/sites"
+      class="group bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col items-center text-center hover:shadow-md hover:-translate-y-1 transition-all duration-200"
+    >
+      <div
+        class="w-14 h-14 rounded-full bg-pink-50 flex items-center justify-center mb-4 group-hover:bg-pink-100 transition-colors"
+      >
+        <span class="material-icons text-pink-600 text-2xl">location_city</span>
+      </div>
+      <h2 class="text-lg font-semibold text-gray-800 mb-1">Sites</h2>
+      <p class="text-sm text-gray-400">Organisez vos clubs et complexes</p>
+      <span class="mt-4 text-xs font-medium text-pink-600 group-hover:underline"
+        >Accéder →</span
+      >
+    </a>
+
+    <!-- Terrains -->
+    <a
+      routerLink="/terrains"
+      class="group bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col items-center text-center hover:shadow-md hover:-translate-y-1 transition-all duration-200"
+    >
+      <div
+        class="w-14 h-14 rounded-full bg-pink-50 flex items-center justify-center mb-4 group-hover:bg-pink-100 transition-colors"
+      >
+        <span class="material-icons text-pink-600 text-2xl">grid_view</span>
+      </div>
+      <h2 class="text-lg font-semibold text-gray-800 mb-1">Terrains</h2>
+      <p class="text-sm text-gray-400">
+        Configurez vos terrains intérieur/extérieur
+      </p>
+      <span class="mt-4 text-xs font-medium text-pink-600 group-hover:underline"
+        >Accéder →</span
+      >
+    </a>
+
+    <!-- Réservations -->
+    <a
+      routerLink="/reservations"
+      class="group bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col items-center text-center hover:shadow-md hover:-translate-y-1 transition-all duration-200"
+    >
+      <div
+        class="w-14 h-14 rounded-full bg-pink-50 flex items-center justify-center mb-4 group-hover:bg-pink-100 transition-colors"
+      >
+        <span class="material-icons text-pink-600 text-2xl"
+          >event_available</span
+        >
+      </div>
+      <h2 class="text-lg font-semibold text-gray-800 mb-1">Réservations</h2>
+      <p class="text-sm text-gray-400">Suivez les créneaux et disponibilités</p>
+      <span class="mt-4 text-xs font-medium text-pink-600 group-hover:underline"
+        >Accéder →</span
+      >
+    </a>
+  </div>
+</div>
