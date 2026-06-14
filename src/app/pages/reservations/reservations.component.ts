@@ -59,8 +59,12 @@ export class ReservationsComponent implements OnInit {
       if (result) {
         this.reservationService.creerReservation(result).subscribe({
           next: () => this.loadReservations(),
-          error: (err: any) =>
-            console.error('Erreur création réservation', err),
+          error: (err: any) => {
+            const message =
+              err.error?.message ||
+              'Erreur lors de la création de la réservation';
+            alert(message);
+          },
         });
       }
     });
