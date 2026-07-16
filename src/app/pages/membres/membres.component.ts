@@ -8,17 +8,16 @@ import { MembreDialogComponent } from '../../components/membre-dialog/membre-dia
 import { Membre, MembreService } from '../../services/membre.service';
 
 @Component({
-  selector: 'app-membres',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatTableModule,
-    MatButtonModule,
-    MatIconModule,
-    MatDialogModule,
-  ],
-  templateUrl: './membres.component.html',
-  styleUrl: './membres.component.scss',
+    selector: 'app-membres',
+    imports: [
+        CommonModule,
+        MatTableModule,
+        MatButtonModule,
+        MatIconModule,
+        MatDialogModule,
+    ],
+    templateUrl: './membres.component.html',
+    styleUrl: './membres.component.css'
 })
 export class MembresComponent implements OnInit {
   membres: Membre[] = [];
