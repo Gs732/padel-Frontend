@@ -8,19 +8,18 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @Component({
-  selector: 'app-terrain-dialog',
-  standalone: true,
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatSlideToggleModule
-  ],
-  templateUrl: './terrain-dialog.component.html',
-  styleUrl: './terrain-dialog.component.css'
+    selector: 'app-terrain-dialog',
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatSlideToggleModule
+    ],
+    templateUrl: './terrain-dialog.component.html',
+    styleUrl: './terrain-dialog.component.css'
 })
 export class TerrainDialogComponent {
 

@@ -8,17 +8,16 @@ import { TerrainDialogComponent } from '../../components/terrain-dialog/terrain-
 import { Terrain, TerrainService } from '../../services/terrain.service';
 
 @Component({
-  selector: 'app-terrains',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatTableModule,
-    MatButtonModule,
-    MatIconModule,
-    MatDialogModule
-  ],
-  templateUrl: './terrains.component.html',
-  styleUrl: './terrains.component.css'
+    selector: 'app-terrains',
+    imports: [
+        CommonModule,
+        MatTableModule,
+        MatButtonModule,
+        MatIconModule,
+        MatDialogModule
+    ],
+    templateUrl: './terrains.component.html',
+    styleUrl: './terrains.component.css'
 })
 export class TerrainsComponent implements OnInit {
 

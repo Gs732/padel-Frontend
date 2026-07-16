@@ -11,19 +11,17 @@ import { MatTableModule } from '@angular/material/table';
 
 
 @Component({
-  selector: 'app-site-dialog',
-  standalone: true,
-  imports: [CommonModule,
-    MatTableModule,
-    MatButtonModule,
-    MatIconModule,
-    MatDialogModule,
-    ReactiveFormsModule,
-    MatSlideToggleModule,
-    MatDialogModule, MatFormFieldModule, MatInputModule],
-
-  templateUrl: './site-dialog.component.html',
-  styleUrl: './site-dialog.component.css'
+    selector: 'app-site-dialog',
+    imports: [CommonModule,
+        MatTableModule,
+        MatButtonModule,
+        MatIconModule,
+        MatDialogModule,
+        ReactiveFormsModule,
+        MatSlideToggleModule,
+        MatDialogModule, MatFormFieldModule, MatInputModule],
+    templateUrl: './site-dialog.component.html',
+    styleUrl: './site-dialog.component.css'
 })
 export class SiteDialogComponent {
 

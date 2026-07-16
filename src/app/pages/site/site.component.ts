@@ -8,17 +8,16 @@ import { SiteDialogComponent } from '../../components/site-dialog/site-dialog.co
 import { Site, SiteService } from '../../services/site.service';
 
 @Component({
-  selector: 'app-site',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatTableModule,
-    MatButtonModule,
-    MatIconModule,
-    MatDialogModule
-  ],
-  templateUrl: './site.component.html',
-  styleUrl: './site.component.css'
+    selector: 'app-site',
+    imports: [
+        CommonModule,
+        MatTableModule,
+        MatButtonModule,
+        MatIconModule,
+        MatDialogModule
+    ],
+    templateUrl: './site.component.html',
+    styleUrl: './site.component.css'
 })
 export class SiteComponent implements OnInit {
 

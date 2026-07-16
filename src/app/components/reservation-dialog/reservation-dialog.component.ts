@@ -14,19 +14,18 @@ import { MatSelectModule } from '@angular/material/select';
 import { inject } from '@angular/core';
 
 @Component({
-  selector: 'app-reservation-dialog',
-  standalone: true,
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatSelectModule,
-  ],
-  templateUrl: './reservation-dialog.component.html',
-  styleUrl: './reservation-dialog.component.css',
+    selector: 'app-reservation-dialog',
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatSelectModule,
+    ],
+    templateUrl: './reservation-dialog.component.html',
+    styleUrl: './reservation-dialog.component.css'
 })
 export class ReservationDialogComponent {
   form: FormGroup;

@@ -11,17 +11,16 @@ import {
 import { ReservationDialogComponent } from '../../components/reservation-dialog/reservation-dialog.component';
 
 @Component({
-  selector: 'app-reservations',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatTableModule,
-    MatButtonModule,
-    MatIconModule,
-    MatDialogModule,
-  ],
-  templateUrl: './reservations.component.html',
-  styleUrl: './reservations.component.css',
+    selector: 'app-reservations',
+    imports: [
+        CommonModule,
+        MatTableModule,
+        MatButtonModule,
+        MatIconModule,
+        MatDialogModule,
+    ],
+    templateUrl: './reservations.component.html',
+    styleUrl: './reservations.component.css'
 })
 export class ReservationsComponent implements OnInit {
   reservations: Reservation[] = [];

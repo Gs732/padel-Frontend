@@ -14,20 +14,19 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select'; // N
 
 @Component({
-  selector: 'app-membre-dialog',
-  standalone: true,
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatSlideToggleModule,
-    MatSelectModule,
-  ],
-  templateUrl: './membre-dialog.component.html',
-  styleUrl: './membre-dialog.component.css',
+    selector: 'app-membre-dialog',
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatSlideToggleModule,
+        MatSelectModule,
+    ],
+    templateUrl: './membre-dialog.component.html',
+    styleUrl: './membre-dialog.component.css'
 })
 export class MembreDialogComponent {
   form: FormGroup;
