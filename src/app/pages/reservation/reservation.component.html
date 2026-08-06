@@ -1,0 +1,78 @@
+<div class="reservation-container">
+  <h1>Réserver un créneau</h1>
+
+  <!-- Étape 1 : choisir terrain + date -->
+  <div class="form-section">
+    <label>
+      Terrain
+      <select [(ngModel)]="terrainId">
+        <option [ngValue]="null">-- Choisir un terrain --</option>
+        @for (t of terrains; track t.id) {
+          <option [ngValue]="t.id">{{ t.nom }}</option>
+        }
+      </select>
+    </label>
+
+    <label>
+      Date
+      <input type="date" [(ngModel)]="date" />
+    </label>
+
+    <button (click)="chargerCreneaux()">Voir les créneaux</button>
+  </div>
+
+  <!-- Messages -->
+  @if (erreur) {
+    <p class="erreur">{{ erreur }}</p>
+  }
+  @if (message) {
+    <p class="succes">{{ message }}</p>
+  }
+
+  <!-- Étape 2 : les créneaux -->
+  @if (creneaux.length > 0) {
+    <h2>Créneaux disponibles</h2>
+    <div class="creneaux-grid">
+      @for (c of creneaux; track c.debut) {
+        <button
+          class="creneau"
+          [class.dispo]="c.disponible"
+          [class.pris]="!c.disponible"
+          [class.choisi]="creneauChoisi === c"
+          [disabled]="!c.disponible"
+          (click)="choisirCreneau(c)"
+        >
+          {{ heure(c.debut) }} - {{ heure(c.fin) }}
+        </button>
+      }
+    </div>
+  }
+
+  <!-- Étape 3 : organisateur + confirmation -->
+  @if (creneauChoisi) {
+    <div class="form-section">
+      <h2>Confirmer la réservation</h2>
+      <p>Créneau choisi : <strong>{{ heure(creneauChoisi.debut) }} - {{ heure(creneauChoisi.fin) }}</strong></p>
+
+      <label>
+        Organisateur
+        <select [(ngModel)]="organisateurId">
+          <option [ngValue]="null">-- Choisir un membre --</option>
+          @for (m of membres; track m.id) {
+            <option [ngValue]="m.id">{{ m.nom }} {{ m.prenom }} ({{ m.matricule }})</option>
+          }
+        </select>
+      </label>
+
+      <label>
+        Visibilité
+        <select [(ngModel)]="visibilite">
+          <option value="PRIVE">Privé</option>
+          <option value="PUBLIC">Public</option>
+        </select>
+      </label>
+
+      <button (click)="reserver()">Réserver</button>
+    </div>
+  }
+</div>

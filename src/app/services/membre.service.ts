@@ -5,12 +5,15 @@ import { Observable } from 'rxjs';
 
 export interface Membre {
   id: number;
+  matricule: string;
   nom: string;
   prenom: string;
   email: string;
   telephone: string;
   solde: number;
   actif: boolean;
+  type: string;
+  siteNom: string | null;
 }
 
 @Injectable({
