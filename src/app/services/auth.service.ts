@@ -22,6 +22,16 @@ export class AuthService {
 
   isLoggedIn = computed(() => this.tokenSignal() !== null);
 
+  // Le rôle de l'utilisateur, extrait du token JWT
+  role = computed(() => this.extractRole(this.tokenSignal()));
+
+  // Raccourcis pratiques pour les templates
+  isAdmin = computed(() => {
+    const r = this.role();
+    return r === 'ROLE_ADMIN_GLOBAL' || r === 'ROLE_ADMIN_SITE';
+  });
+  isAdminGlobal = computed(() => this.role() === 'ROLE_ADMIN_GLOBAL');
+
   constructor(
     private http: HttpClient,
     private router: Router,
@@ -44,5 +54,21 @@ export class AuthService {
     localStorage.removeItem('token');
     this.tokenSignal.set(null);
     this.router.navigate(['/login']);
+  }
+
+  // Décode le payload du JWT et en extrait le rôle
+  private extractRole(token: string | null): string | null {
+    if (!token) return null;
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      // Le backend met le rôle dans "role" : [{ authority: "ROLE_ADMIN_GLOBAL" }]
+      const roles = payload.role;
+      if (Array.isArray(roles) && roles.length > 0) {
+        return roles[0].authority;
+      }
+      return null;
+    } catch {
+      return null;
+    }
   }
 }
