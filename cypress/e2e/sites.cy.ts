@@ -1,5 +1,6 @@
 describe('Gestion des Sites', () => {
-  beforeEach(() => {
+ beforeEach(() => {
+    cy.login('admin', 'admin123');
     cy.visit('/sites');
   });
 

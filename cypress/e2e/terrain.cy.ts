@@ -1,9 +1,10 @@
 describe('Gestion des Terrains', () => {
   beforeEach(() => {
+    cy.login('admin', 'admin123');
     cy.visit('/terrains');
   });
 
-  it('should display the sites page', () => {
+  it('should display the terrains page', () => {
     cy.contains('Gestion des Terrains');
     cy.contains('+ Nouveau terrain');
   });
